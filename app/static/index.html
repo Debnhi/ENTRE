@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Entrenamientos y Licencias · GPS SLP</title>
+<link rel="stylesheet" href="/static/css/app.css">
+</head>
+<body>
+
+<div id="login" class="login-screen">
+  <div class="login-card">
+    <div class="login-brand">
+      <div class="login-mark">GM</div>
+      <div>
+        <div class="login-title">Entrenamientos y Licencias</div>
+      </div>
+    </div>
+
+    <form id="login-form">
+      <label class="field">
+        <span>GMIN</span>
+        <input id="lg-gmin" autocomplete="username" required pattern="\d{6,10}" placeholder="p. ej. 900000010">
+      </label>
+      <div id="lg-error" class="field-error hidden"></div>
+      <button class="btn primary full" type="submit" id="lg-submit">Iniciar sesión</button>
+    </form>
+
+    <details class="login-demo">
+      <summary>Ver cuentas de demostración</summary>
+      <table>
+        <tr><td>900000010</td><td>Administrador</td></tr>
+        <tr><td>900000011</td><td>Instructor</td></tr>
+        <tr><td>900000012</td><td>Supervisor</td></tr>
+        <tr><td>900000013</td><td>Servicio médico</td></tr>
+      </table>
+    </details>
+
+  </div>
+</div>
+
+<div id="app" class="shell hidden">
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="login-mark small">GM</div>
+      <div class="sidebar-brand-text">
+        <strong>Entrenamientos</strong>
+        <span>GPS SLP</span>
+      </div>
+    </div>
+    <nav id="nav"></nav>
+    <div class="sidebar-foot">
+      <div class="user-chip">
+        <div class="avatar" id="avatar"></div>
+        <div class="user-info">
+          <div id="who-name"></div>
+          <span class="role-pill" id="who-rol"></span>
+        </div>
+      </div>
+      <button class="btn small full" id="logout">Cerrar sesión</button>
+    </div>
+  </aside>
+
+  <div class="main-col">
+    <header class="topbar">
+      <div id="crumb" class="crumb">Resumen</div>
+      <div id="session-exp" class="muted small"></div>
+    </header>
+    <main id="main"></main>
+  </div>
+</div>
+
+<dialog id="dlg"><div id="dlg-body"></div></dialog>
+<div id="toast" class="toast hidden"></div>
+<script src="/static/js/app.js"></script>
+</body>
+</html>
